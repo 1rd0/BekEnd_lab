@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Builder;
+﻿using asp_empty.Controllers;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -9,61 +10,39 @@ namespace asp_empty
 {
     public class Program
     {
-        public static void Main(string[] args)
-        {
-            var builder = WebApplication.CreateBuilder(args);
-            //ServiceCollection -    место, где вы 
-            //    можете зарегистрировать 
-            //    службы , которые будут 
-            //    использоваться
-            var container = new ServiceCollection();
-            //регистрируете классы  Bird в контейнер служб 
-            container.AddSingleton<IAnimal, Bird>();
-            //создание поставщика служб 
-            var serviceprovider = container.BuildServiceProvider();
+          public   int id = 0;
+        
 
-            var Animal = serviceprovider.GetService<IAnimal>();
+
+            public static void Main(string[] args)
+        {
+
+ 
+        var builder = WebApplication.CreateBuilder(args);
+            builder.Services.AddControllers();
+            builder.Services.AddEndpointsApiExplorer();
+            builder.Services.AddSwaggerGen();
 
             var app = builder.Build();
-
-            app.MapGet("/", () =>
+            app.MapControllers();
+            if (app.Environment.IsDevelopment())
             {
-                Console.WriteLine($" Number of {Animal.Name()} legs: {Animal.CountOFLegs()}");
+                app.UseSwagger();
+                app.UseSwaggerUI();
+            }
+            var controller = new HomeController();
+          
+            app.MapGet("/", () =>
+            { 
+
+
             });
 
             app.Run();
         }
-        //сервис 
-        public interface IAnimal
-        {
-            string Name();
-            int CountOFLegs();
-        }
-
-        public class Dog : IAnimal
-        {
-            public string Name()
-            {
-                return "dog";
-            }
-            public int CountOFLegs()
-            {
-                return 4;
-            }
-        }
-
-        public class Bird : IAnimal
-        {
-            public string Name()
-            {
-                return "Bird";
-            }
-            public int CountOFLegs()
-            {
-                return 2;
-            }
-        }
          
+         
+
 
 
     }
