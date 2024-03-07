@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "Hash": "Vhc4n1PxfrtFD9zR8xdyHPm6k8evsSIyWptjCxT2jUU=",
+  "Source": "asp-empty",
+  "BasePath": "_content/asp-empty",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "asp-empty\\wwwroot",
+      "Source": "asp-empty",
+      "ContentRoot": "D:\\c#web\\asp-empty\\wwwroot\\",
+      "BasePath": "_content/asp-empty",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "D:\\c#web\\asp-empty\\wwwroot\\htmlpage.html",
+      "SourceId": "asp-empty",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\c#web\\asp-empty\\wwwroot\\",
+      "BasePath": "_content/asp-empty",
+      "RelativePath": "htmlpage.html",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\htmlpage.html"
+    }
+  ]
+}

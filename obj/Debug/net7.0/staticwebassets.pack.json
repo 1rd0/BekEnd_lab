@@ -1,0 +1,25 @@
+{
+  "Files": [
+    {
+      "Id": "D:\\c#web\\asp-empty\\wwwroot\\htmlpage.html",
+      "PackagePath": "staticwebassets\\htmlpage.html"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.asp-empty.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.build.asp-empty.props",
+      "PackagePath": "build\\asp-empty.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.buildMultiTargeting.asp-empty.props",
+      "PackagePath": "buildMultiTargeting\\asp-empty.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.buildTransitive.asp-empty.props",
+      "PackagePath": "buildTransitive\\asp-empty.props"
+    }
+  ],
+  "ElementsToRemove": []
+}
