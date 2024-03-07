@@ -1,4 +1,5 @@
 ﻿using asp_empty.Controllers;
+using Microsoft.AspNetCore.Antiforgery;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
@@ -10,34 +11,34 @@ namespace asp_empty
 {
     public class Program
     {
-          public   int id = 0;
+         
         
 
 
             public static void Main(string[] args)
         {
 
- 
-        var builder = WebApplication.CreateBuilder(args);
-            builder.Services.AddControllers();
-            builder.Services.AddEndpointsApiExplorer();
-            builder.Services.AddSwaggerGen();
-
-            var app = builder.Build();
-            app.MapControllers();
-            if (app.Environment.IsDevelopment())
+            var builder = WebApplication.CreateBuilder();
+            // добавляем сервисы CORS и определяем политики
+            builder.Services.AddCors(options =>
             {
-                app.UseSwagger();
-                app.UseSwaggerUI();
-            }
-            var controller = new HomeController();
-          
-            app.MapGet("/", () =>
-            { 
+                options.AddPolicy("Option", builder => builder
+                 .WithOrigins("http://localhost:5057")
+                .WithMethods("GET")
+                .WithHeaders("custom-header"));
+
 
 
             });
-
+            var app = builder.Build();
+            // настраиваем CORS
+            app.UseCors("Option");
+            app.Run(async (context) =>
+            {
+                 
+                  await context.Response.WriteAsync("Answer!");
+               
+            });
             app.Run();
         }
          
