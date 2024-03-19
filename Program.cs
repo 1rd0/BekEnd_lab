@@ -1,48 +1,90 @@
-﻿using asp_empty.Controllers;
-using Microsoft.AspNetCore.Antiforgery;
-using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
-using System;
-using System.Diagnostics;
+﻿using asp_empty.Models;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authentication.OAuth;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.IdentityModel.Tokens;
+using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
+using System.Text;
 
 namespace asp_empty
 {
     public class Program
     {
-         
-        
-
-
-            public static void Main(string[] args)
+        public static void Main(string[] args)
         {
 
+
+
             var builder = WebApplication.CreateBuilder();
-            // добавляем сервисы CORS и определяем политики
-            builder.Services.AddCors(options =>
+
+            builder.Services.AddControllers();
+
+            builder.Services.AddEndpointsApiExplorer();
+            builder.Services.AddSwaggerGen();
+
+            //настройка 
+            builder.Services.AddAuthentication().AddJwtBearer(options =>
             {
-                options.AddPolicy("Option", builder => builder
-                 .WithOrigins("http://localhost:5057")
-                .WithMethods("GET")
-                .WithHeaders("custom-header"));
 
-
-
+                options.TokenValidationParameters = new TokenValidationParameters
+                {
+                    ValidateIssuer = true,
+                    ValidIssuer = AuthOptions.ISSUER,
+                    ValidateAudience = true,
+                    ValidAudience = AuthOptions.AUDIENCE,
+                    ValidateLifetime = true,
+                    IssuerSigningKey = AuthOptions.GetSymmetricSecurityKey(),
+                    ValidateIssuerSigningKey = true
+                };
             });
+
+
             var app = builder.Build();
-            // настраиваем CORS
-            app.UseCors("Option");
-            app.Run(async (context) =>
+            app.MapControllers();
+           
+
+        
+            if (app.Environment.IsDevelopment())
             {
-                 
-                  await context.Response.WriteAsync("Answer!");
-               
-            });
+                app.UseSwagger();
+                app.UseSwaggerUI();
+            }
+
+
+            app.UseAuthentication();
+            app.UseAuthorization();
+
+
             app.Run();
+
+
         }
-         
-         
+
+
+        public class AuthOptions
+        {
+            public const string ISSUER = "MyAuthServer"; // Издатель токена
+            public const string AUDIENCE = "MyAuthClient"; // Потребитель токена
+            const string KEY = "mysupersecret_secretsecretsecretkey!123";   // Ключ для шифрации
+
+            public static SymmetricSecurityKey GetSymmetricSecurityKey() =>
+                new SymmetricSecurityKey(Encoding.UTF8.GetBytes(KEY));
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
