@@ -50,12 +50,12 @@ namespace asp_empty
                 app.UseSwagger();
                 app.UseSwaggerUI();
             }
-
-
+            app.UseStaticFiles();
+            app.UseDirectoryBrowser();
             app.UseAuthentication();
             app.UseAuthorization();
 
-
+ 
             app.Run();
 
 

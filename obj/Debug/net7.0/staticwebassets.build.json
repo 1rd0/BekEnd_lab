@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "3ULXZqlzwl+BaM7PhexoqeFe0Z/zN5TAmJb0CVsu3n4=",
+  "Hash": "ki50wXQIMLZTNla1d9LQK+/TvU09NzP6F8TpkE8+j3Y=",
   "Source": "asp-empty",
   "BasePath": "_content/asp-empty",
   "Mode": "Default",
@@ -763,6 +763,57 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\dimra\\.nuget\\packages\\bootstrap\\5.3.3\\contentFiles\\any\\any\\wwwroot\\js\\bootstrap.min.js.map"
+    },
+    {
+      "Identity": "D:\\c#web\\asp-empty\\wwwroot\\htmlpage.html",
+      "SourceId": "asp-empty",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\c#web\\asp-empty\\wwwroot\\",
+      "BasePath": "_content/asp-empty",
+      "RelativePath": "htmlpage.html",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\htmlpage.html"
+    },
+    {
+      "Identity": "D:\\c#web\\asp-empty\\wwwroot\\index.html",
+      "SourceId": "asp-empty",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\c#web\\asp-empty\\wwwroot\\",
+      "BasePath": "_content/asp-empty",
+      "RelativePath": "index.html",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\index.html"
+    },
+    {
+      "Identity": "D:\\c#web\\asp-empty\\wwwroot\\photo_2024-02-12_12-46-12.jpg",
+      "SourceId": "asp-empty",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\c#web\\asp-empty\\wwwroot\\",
+      "BasePath": "_content/asp-empty",
+      "RelativePath": "photo_2024-02-12_12-46-12.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\photo_2024-02-12_12-46-12.jpg"
     }
   ]
 }

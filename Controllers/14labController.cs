@@ -25,7 +25,7 @@ namespace asp_empty.Controllers
 };
 
 
-        [HttpPost("smt")]
+        [HttpPost("smt/foruser")]
         [Authorize(Roles = "user")]
         public IActionResult WriteSomething()
         {
@@ -70,18 +70,28 @@ namespace asp_empty.Controllers
 
             return Ok(response);
         }
-        [HttpPost("data")]
+        [HttpPost("data/access")]
         [Authorize]
         public IActionResult GetData()
         {
             return Ok( "U have access congrats" );
         }
-        [HttpGet("AnyOne")]
+        [HttpGet("AnyOne/{name:int}")]
         [AllowAnonymous]
-        public IActionResult Anys()
+        public IActionResult Anys(int name)
         {
-            return Ok("U have access AllowAnonymous" );
+            return Ok($"U have access AllowAnonymous {name}" );
         }
+
+        [HttpPost("data/access/{name}")]
+        [Authorize]
+        public IActionResult GetData(string name)
+        {
+            // Теперь вы можете использовать параметр 'name' в вашей логике
+            return Ok($"U have access, {name}! Congrats");
+        }
+
+
     }
 
     public class AuthOptions
