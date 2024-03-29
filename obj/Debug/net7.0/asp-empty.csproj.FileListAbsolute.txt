@@ -1,4 +1,3 @@
-D:\c#web\asp-empty\bin\Debug\net7.0\appsettings.Development.json
 D:\c#web\asp-empty\bin\Debug\net7.0\appsettings.json
 D:\c#web\asp-empty\bin\Debug\net7.0\asp-empty.exe
 D:\c#web\asp-empty\bin\Debug\net7.0\asp-empty.deps.json
@@ -56,3 +55,5 @@ D:\c#web\asp-empty\bin\Debug\net7.0\System.IdentityModel.Tokens.Jwt.dll
 D:\c#web\asp-empty\bin\Debug\net7.0\Pipelines.Sockets.Unofficial.dll
 D:\c#web\asp-empty\bin\Debug\net7.0\StackExchange.Redis.dll
 D:\c#web\asp-empty\bin\Debug\net7.0\System.Security.Permissions.dll
+D:\c#web\asp-empty\bin\Debug\net7.0\json.json
+D:\c#web\asp-empty\bin\Debug\net7.0\appsettings.Development.json

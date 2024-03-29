@@ -2,8 +2,11 @@
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authentication.OAuth;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
+using System.Net.NetworkInformation;
+using System.Net.Sockets;
 using System.Security.Claims;
 using System.Text;
 
@@ -16,7 +19,7 @@ namespace asp_empty
 
 
 
-            var builder = WebApplication.CreateBuilder();
+            var builder = WebApplication.CreateBuilder(args);
 
             builder.Services.AddControllers();
 
@@ -50,18 +53,27 @@ namespace asp_empty
                 app.UseSwagger();
                 app.UseSwaggerUI();
             }
-            app.UseStaticFiles();
-            app.UseDirectoryBrowser();
-            app.UseAuthentication();
-            app.UseAuthorization();
+            /*  app.UseStaticFiles();
+              app.UseDirectoryBrowser();
+              app.UseAuthentication();
+              app.UseAuthorization();*/
 
- 
+            
+
+
             app.Run();
-
-
         }
-
-
+        public static IHostBuilder CreateHostBuilder(string[] args) =>
+        Host.CreateDefaultBuilder(args)
+            .ConfigureWebHostDefaults(webBuilder =>
+            {
+                webBuilder.UseStartup<Program>();
+            })
+            .ConfigureAppConfiguration((hostingContext, config) =>
+            {
+                config.AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
+                      .AddJsonFile($"appsettings.{hostingContext.HostingEnvironment.EnvironmentName}.json", optional: true, reloadOnChange: true);
+            });
         public class AuthOptions
         {
             public const string ISSUER = "MyAuthServer"; // Издатель токена
