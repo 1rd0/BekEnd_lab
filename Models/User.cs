@@ -1,23 +1,16 @@
-﻿namespace asp_empty.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace asp_empty.Models
 {
     public class User
     {
-        class Person
+        public string Username { get; set; }
+        public int Age { get; set; }
+
+        public User(string name,int age)
         {
-            public string Email { get; set; }
-            public string Password { get; set; }
-            public Role Role { get; set; }
-            public Person(string email, string password, Role role)
-            {
-                Email = email;
-                Password = password;
-                Role = role;
-            }
-        }
-        class Role
-        {
-            public string Name { get; set; }
-            public Role(string name) => Name = name;
+        this.Username = name;   
+            this.Age = age;
         }
     }
 }

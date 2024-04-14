@@ -22,8 +22,8 @@
     <PackageReference Include="Swashbuckle.AspNetCore.Swagger" Version="6.5.0" />
     <PackageReference Include="Swashbuckle.AspNetCore.SwaggerGen" Version="6.5.0" />
     <PackageReference Include="Swashbuckle.AspNetCore.SwaggerUI" Version="6.5.0" />
-    <PackageReference Include="System.Data.Odbc" Version="9.0.0-preview.1.24080.9" />
-    <PackageReference Include="System.Data.OleDb" Version="9.0.0-preview.1.24080.9" />
+    <PackageReference Include="System.Data.Odbc" Version="7.0.0" />
+    <PackageReference Include="System.Data.OleDb" Version="7.0.0" />
     <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="7.4.0" />
     <PackageReference Include="System.Linq" Version="4.3.0" />
   </ItemGroup>

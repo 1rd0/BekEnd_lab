@@ -6,18 +6,19 @@ namespace asp_empty.data
 {
     public class DBcontext : DbContext
     {
-        public DbSet<User> users { get; set; }
 
-        public string DataBaseconnection = "Host=localhost; Database=DBfor14lab ; Username=postgres; Password=admin"
-              ;
+        public DbSet<User> Users { get; set; }
 
-        public DBcontext()
-        {
+ 
+
+        public DBcontext() {
             Database.EnsureCreated();
         }
+
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseNpgsql(DataBaseconnection);
+            optionsBuilder.UseNpgsql();
         }
     }
 }
