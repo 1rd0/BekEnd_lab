@@ -67,6 +67,8 @@ namespace asp_empty
             builder.Services.AddDistributedMemoryCache();// добавляем IDistributedMemoryCache
             builder.Services.AddSession();  // добавляем сервисы сессии
 
+
+
             var app = builder.Build();
 
             app.UseSession();   // добавляем middleware для работы с сессиями
@@ -76,23 +78,23 @@ namespace asp_empty
 
             builder.Configuration.AddXmlFile("config.xml");
 
- 
+    
             if (app.Environment.IsDevelopment())
             {
                 app.UseSwagger();
                 app.UseSwaggerUI();
             }
-            /*  app.UseStaticFiles();
-              app.UseDirectoryBrowser();
-              app.UseAuthentication();
-              app.UseAuthorization();*/
+            app.UseStaticFiles();
+             /* app.UseAuthentication();
+             app.UseAuthorization();*/
 
 
 
 
-            app.Map("/", (IConfiguration appConfig) => $"{appConfig["person"]} - {appConfig["company"]}");
+            //            app.Map("/", (IConfiguration appConfig) => $"{appConfig["person"]} - {appConfig["company"]}");
+           
 
-
+           
 
             app.Run();
         }

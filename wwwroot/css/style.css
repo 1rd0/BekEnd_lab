@@ -1,0 +1,22 @@
+﻿.menu
+{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+}
+
+.menu button
+{
+    width:200px;
+    height: 20px;
+
+    border-radius:19px;
+    background-color:aqua;
+    border-color:brown;
+        
+}
+
+h1{
+    text-align:center;
+}
