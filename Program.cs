@@ -17,8 +17,9 @@ using System.Text.Json;
 using Microsoft.EntityFrameworkCore;
 using Npgsql;
 using asp_empty.data;
-
-public static class SessionExtensions
+using Microsoft.Extensions.Caching.Distributed;
+using Microsoft.Extensions.Caching.StackExchangeRedis;
+ public static class SessionExtensions
 {
     public static void Set<T>(this ISession session, string key, T value)
     {
@@ -43,7 +44,7 @@ namespace asp_empty
             var builder = WebApplication.CreateBuilder(args);
 
             builder.Services.AddControllers();
-
+            
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
 
@@ -68,7 +69,13 @@ namespace asp_empty
             builder.Services.AddSession();  // добавляем сервисы сессии
 
 
-
+            builder.Services.AddControllersWithViews();
+            builder.Services.AddMemoryCache();
+            builder.Services.AddStackExchangeRedisCache(options =>
+            {
+                options.Configuration = "localhost";
+                options.InstanceName = "local";
+            });
             var app = builder.Build();
 
             app.UseSession();   // добавляем middleware для работы с сессиями
@@ -76,7 +83,7 @@ namespace asp_empty
 
             app.MapControllers();
 
-            builder.Configuration.AddXmlFile("config.xml");
+             
 
     
             if (app.Environment.IsDevelopment())
@@ -84,7 +91,7 @@ namespace asp_empty
                 app.UseSwagger();
                 app.UseSwaggerUI();
             }
-            app.UseStaticFiles();
+           
              /* app.UseAuthentication();
              app.UseAuthorization();*/
 

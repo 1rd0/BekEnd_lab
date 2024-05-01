@@ -78,3 +78,13 @@ D:\c#web\asp-empty\bin\Debug\net7.0\runtimes\win\lib\net7.0\System.Drawing.Commo
 D:\c#web\asp-empty\bin\Debug\net7.0\runtimes\win\lib\net7.0\System.Security.Cryptography.ProtectedData.dll
 D:\c#web\asp-empty\bin\Debug\net7.0\runtimes\win\lib\net7.0\System.Windows.Extensions.dll
 D:\c#web\asp-empty\bin\Debug\net7.0\json1.json
+D:\c#web\asp-empty\bin\Debug\net7.0\Microsoft.Extensions.Caching.Abstractions.dll
+D:\c#web\asp-empty\bin\Debug\net7.0\Microsoft.Extensions.Caching.Redis.dll
+D:\c#web\asp-empty\bin\Debug\net7.0\Microsoft.Extensions.Caching.StackExchangeRedis.dll
+D:\c#web\asp-empty\bin\Debug\net7.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\c#web\asp-empty\bin\Debug\net7.0\Microsoft.Extensions.Logging.Abstractions.dll
+D:\c#web\asp-empty\bin\Debug\net7.0\Microsoft.Extensions.Options.dll
+D:\c#web\asp-empty\bin\Debug\net7.0\Microsoft.Extensions.Primitives.dll
+D:\c#web\asp-empty\bin\Debug\net7.0\StackExchange.Redis.StrongName.dll
+D:\c#web\asp-empty\bin\Debug\net7.0\System.Runtime.Caching.dll
+D:\c#web\asp-empty\bin\Debug\net7.0\runtimes\win\lib\net7.0\System.Runtime.Caching.dll

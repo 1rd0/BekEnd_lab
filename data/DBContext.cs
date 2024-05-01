@@ -9,6 +9,7 @@ namespace asp_empty.data
 
         public DbSet<User> Users { get; set; }
 
+        public string DataBaseConnection = "Host = localhost;Database = postgres;Username = postgres;password = admin";
  
 
         public DBcontext() {
@@ -18,7 +19,7 @@ namespace asp_empty.data
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseNpgsql();
+            optionsBuilder.UseNpgsql(DataBaseConnection);
         }
     }
 }
