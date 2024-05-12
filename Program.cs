@@ -43,8 +43,16 @@ namespace asp_empty
 
             var builder = WebApplication.CreateBuilder(args);
 
+
+
+
+
+            builder.Services.AddMemoryCache();
+            builder.Services.AddDistributedMemoryCache();
+            builder.Services.AddCors();
+
+
             builder.Services.AddControllers();
-            
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
 
@@ -67,15 +75,14 @@ namespace asp_empty
 
             builder.Services.AddDistributedMemoryCache();// добавляем IDistributedMemoryCache
             builder.Services.AddSession();  // добавляем сервисы сессии
+            builder.Services.AddEndpointsApiExplorer();
+
+            builder.Services.AddApplicationInsightsTelemetry();
 
 
             builder.Services.AddControllersWithViews();
             builder.Services.AddMemoryCache();
-            builder.Services.AddStackExchangeRedisCache(options =>
-            {
-                options.Configuration = "localhost";
-                options.InstanceName = "local";
-            });
+           
             var app = builder.Build();
 
             app.UseSession();   // добавляем middleware для работы с сессиями
